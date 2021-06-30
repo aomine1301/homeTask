@@ -1,0 +1,118 @@
+.App {
+    padding: 0 40px;
+    margin: 0 auto;
+    max-width: 360px;
+}
+
+.AppLogo {
+    margin: 0 auto;
+    margin-top: 150px;
+    margin-bottom: 55px;
+    text-align: center;
+}
+
+.AppLogoImage {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.AppLogoTitle {
+    display: inline-block;
+    vertical-align: middle;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    color: #3F8EEC;
+    margin: 0;
+    cursor: default;
+}
+
+.InputText::placeholder {
+    color: #BEBEBE;
+}
+
+.InputText {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #BEBEBE;
+    padding: 12px 15px;
+    border: 1px solid #E3E3E3;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.InputText:focus {
+    outline: none;
+    border: 1px solid #c3c3c3;
+}
+
+.TextLink {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #3F8EEC;
+    margin-bottom: 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.Button {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFFFF;
+    background: linear-gradient(90deg, #92BDF0 0%, #3F8EEC 100%);
+    box-shadow: 0px 15px 15px rgba(63, 142, 236, 0.15);
+    border-radius: 5px;
+    text-align: center;
+    padding: 12px 0;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.LineOr {
+    position: relative;
+    margin: 20px 0;
+    margin-top: 35px;
+}
+
+.LineOr hr {
+    color: #E3E3E3;
+    background-color: #E3E3E3;
+    border: 0;
+    height: 1px;
+}
+
+.LineOr span {
+    position: absolute;
+    left: calc(50% - 10px);
+    top: -7px;
+    background-color: #fff;
+    padding: 0 5px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: #BEBEBE;
+}
+
+.TextCenter {
+    text-align: center;
+}
