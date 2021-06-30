@@ -9,11 +9,17 @@ import Header from "./parts/Header";
 import Footer from "./parts/Footer";
 import AppRouter from "./AppRouter";
 
-const routingAuth = (
+const routing = (
     <Router>
         <Header/>
         <AppRouter/>
         <Footer/>
+    </Router>
+);
+
+const routingAuth = (
+    <Router>
+        <AppRouter/>
     </Router>
 );
 
