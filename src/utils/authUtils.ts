@@ -1,2 +1,3 @@
 // @ts-ignore
-const user= 445
+// eslint-disable-next-line no-unused-vars
+const user = 445;

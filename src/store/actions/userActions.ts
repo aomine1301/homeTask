@@ -1,3 +1,1 @@
-export type usersisiACtion={
-
-}
+export type usersAction = {};

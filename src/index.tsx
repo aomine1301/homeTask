@@ -1,29 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
-import App from './App';
-import SignIn from './pages/SignIn';
+import { createGlobalStyle } from 'styled-components';
+import AppLayout from './layouts/AppLayout';
+import AuthLayout from './layouts/AuthLayout';
 
-import Header from "./parts/Header";
-import Footer from "./parts/Footer";
-import AppRouter from "./AppRouter";
+let routing;
+const isAuth = false;
+const Global = createGlobalStyle`
+  * {
+    font-family: Roboto, sans-serif;
+  }`;
 
-const routing = (
-    <Router>
-        <Header/>
-        <AppRouter/>
-        <Footer/>
-    </Router>
-);
+if (isAuth) {
+  routing = (
+    <>
 
-const routingAuth = (
-    <Router>
-        <AppRouter/>
-    </Router>
-);
+      <AppLayout />
+    </>
 
+  );
+} else {
+  routing = (
+    <>
+      <Global />
+      <AuthLayout />
+    </>
 
-ReactDOM.render(routingAuth, document.getElementById("root"));
+  );
+}
 
-
+ReactDOM.render(routing, document.getElementById('root'));
