@@ -6,19 +6,22 @@ import { appStateType } from '../store';
 const SIGN_IN = 'LOGIN';
 const SIGN_UP = 'REGISTRATION';
 
+// eslint-disable-next-line no-redeclare
 interface SIGN_IN {
     type: typeof SIGN_IN
     payload: any
 }
+// eslint-disable-next-line no-redeclare
 interface SIGN_UP {
     type: typeof SIGN_UP
     payload: any
 }
-
 export type ActionsTypeCurrencyReducer = SIGN_IN | SIGN_UP
 
+// eslint-disable-next-line no-unused-vars,max-len
 type ThunkType = ThunkAction<Promise<void>, appStateType, unknown, ActionsTypeCurrencyReducer>
 
+// eslint-disable-next-line no-unused-vars
 type getStateType = () => appStateType
 
 const initialState = {
@@ -44,8 +47,8 @@ const currencyReducer = (state = initialState, action: ActionsTypeCurrencyReduce
   }
 };
 // action
-export const login = ():ActionsTypeCurrencyReducer => ({
-  type: SIGN_IN, payload: null,
+export const setLogin = (email:string):ActionsTypeCurrencyReducer => ({
+  type: SIGN_IN, payload: email,
 });
 // thunk
 // export const getAllCurrency = ():ThunkType =>

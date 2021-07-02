@@ -1,3 +1,3 @@
-import InputStyled from "./InputStyled";
+import InputStyled from './InputStyled';
 
-export default InputStyled
+export default InputStyled;

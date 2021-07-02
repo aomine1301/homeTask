@@ -1,33 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { createGlobalStyle } from 'styled-components';
-import AppLayout from './layouts/AppLayout';
-import AuthLayout from './layouts/AuthLayout';
+import { Provider } from 'react-redux';
+import App from './App';
+import { store } from './store/store';
 
-let routing;
-const isAuth = false;
-const Global = createGlobalStyle`
-  * {
-    font-family: Roboto, sans-serif;
-  }`;
-
-if (isAuth) {
-  routing = (
-    <>
-
-      <AppLayout />
-    </>
-
-  );
-} else {
-  routing = (
-    <>
-      <Global />
-      <AuthLayout />
-    </>
-
-  );
-}
-
-ReactDOM.render(routing, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('root'),
+);

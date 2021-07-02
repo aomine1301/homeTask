@@ -1,14 +1,12 @@
 import React from 'react';
-import logo from './assets/images/logo.svg';
 import './App.css';
+import Routing from './AppRouter';
 
 interface AppProps {
 }
 
 const App: React.FC<AppProps> = () => (
-  <div className="App">
-    <img src={logo} alt="logo" />
-  </div>
+  <Routing />
 );
 
 export default App;

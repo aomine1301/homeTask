@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import React from "react";
+import styled from 'styled-components';
+import React from 'react';
 
 const Style = styled.input`
   display: block;
@@ -25,15 +25,14 @@ const Style = styled.input`
 
 interface ButtonProps {
     placeholder:string
+    // eslint-disable-next-line no-unused-vars
     onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void
     value?:string
     margin?:string
     disabled?:boolean
 }
 
-const InputStyled:React.FC<ButtonProps> =(props) =>{
-    return <Style {...props}>
-
-    </Style>
-}
-export default InputStyled
+const InputStyled:React.FC<ButtonProps> = (props) => (
+  <Style {...props} />
+);
+export default InputStyled;
