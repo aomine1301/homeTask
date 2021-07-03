@@ -58,6 +58,7 @@ const SignUpStep1: React.FC<SinnUpProps> = () => {
   };
   const handleButtonSignUpClick = ():void => {
     history.push('/signUpStep2'); // колхоз))
+    // eslint-disable-next-line no-console
     return console.log({
       email: inputEmailValue,
     });

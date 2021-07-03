@@ -87,6 +87,7 @@ const SignIn: React.FC<SignInProps> = () => {
   const handlePasswordValueChange = (event: React.ChangeEvent<HTMLInputElement>):void => {
     setInputPasswordValue(event.target.value);
   };
+  // eslint-disable-next-line no-console
   const handleButtonSignInClick = ():void => console.log({
     username: inputUsernameValue,
     password: inputPasswordValue,
