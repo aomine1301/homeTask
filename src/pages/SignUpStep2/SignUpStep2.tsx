@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import InputStyled from '../../components/styledComponets/Input';
 import ButtonStyled from '../../components/styledComponets/Button';
+import { useTypedSelector } from '../../store/hooks/useTypedSelector';
 
 const StyledDivApp = styled.div`
   display: block;
@@ -49,36 +50,48 @@ interface SinnUpProps {
 
 }
 
-const SignUpStep2: React.FC<SinnUpProps> = () => (
-  <StyledDivApp>
-    <StyledH1App>Create Your Account</StyledH1App>
-    <StyledP style={{ marginBottom: '60px' }}>
-      Try the sensation of ease in managing all school activities in one
-      board
-    </StyledP>
-    <div>
-      <InputStyled placeholder="Your Email" value="grooo1301@gmail.com" disabled />
-      <StyledP margin="16px 75px 0 75px">We sent verification code to your email.</StyledP>
-      <StyledP width="210px" margin="0 75px 16px 75px">Please, enter below</StyledP>
-      <InputStyled placeholder="Verification Code" />
-      <ButtonStyled margin="16px 0 60 px 0">Sign Up</ButtonStyled>
-      <StyledP margin="60px auto 0 auto">by sign up, you agree to get study</StyledP>
-      <StyledP>
-        <StyledLink to="#">Terms of Service</StyledLink>
-        {' '}
-        <StyleSpan>and </StyleSpan>
-        {' '}
-        <StyledLink
-          to="#"
-        >
-          Privacy
-          Policy
-        </StyledLink>
-        {' '}
-
+const SignUpStep2: React.FC<SinnUpProps> = () => {
+  const { emailValue } = useTypedSelector((state) => state.auth);
+  return (
+    <StyledDivApp>
+      <StyledH1App>Create Your Account</StyledH1App>
+      <StyledP style={{ marginBottom: '60px' }}>
+        Try the sensation of ease in managing all school activities in one
+        board
       </StyledP>
-    </div>
-  </StyledDivApp>
-);
+      <div>
+        <InputStyled placeholder="Your Email" value={emailValue} disabled />
+        <StyledP margin="16px 75px 0 75px">
+          We sent verification code to your
+          email.
+        </StyledP>
+        <StyledP width="210px" margin="0 75px 16px 75px">
+          Please, enter
+          below
+        </StyledP>
+        <InputStyled placeholder="Verification Code" />
+        <ButtonStyled margin="16px 0 60 px 0">Sign Up</ButtonStyled>
+        <StyledP margin="60px auto 0 auto">
+          by sign up, you agree to get
+          study
+        </StyledP>
+        <StyledP>
+          <StyledLink to="#">Terms of Service</StyledLink>
+          {' '}
+          <StyleSpan>and </StyleSpan>
+          {' '}
+          <StyledLink
+            to="#"
+          >
+            Privacy
+            Policy
+          </StyledLink>
+          {' '}
+
+        </StyledP>
+      </div>
+    </StyledDivApp>
+  );
+};
 
 export default SignUpStep2;

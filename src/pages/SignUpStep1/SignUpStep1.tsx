@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useHistory, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
+import { useDispatch } from 'react-redux';
 import InputStyled from '../../components/styledComponets/Input';
 import ButtonStyled from '../../components/styledComponets/Button';
+import { signInAction } from '../../store/reducers/authReducer';
 
 const StyledDivApp = styled.div`
   display: block;
@@ -52,16 +54,14 @@ interface SinnUpProps {
 
 const SignUpStep1: React.FC<SinnUpProps> = () => {
   const history = useHistory();
-  const [inputEmailValue, setInputUsernameValue] = useState<string>('');
+
+  const dispatch = useDispatch();
   const handleEmailValueChange = (event: React.ChangeEvent<HTMLInputElement>):void => {
-    setInputUsernameValue(event.target.value);
+    dispatch(signInAction(event.target.value));
   };
   const handleButtonSignUpClick = ():void => {
     history.push('/signUpStep2'); // колхоз))
     // eslint-disable-next-line no-console
-    return console.log({
-      email: inputEmailValue,
-    });
   };
   return (
     <StyledDivApp>
@@ -71,7 +71,7 @@ const SignUpStep1: React.FC<SinnUpProps> = () => {
         board
       </StyledP>
       <div>
-        <InputStyled placeholder="Your Email" value={inputEmailValue} onChange={handleEmailValueChange} />
+        <InputStyled placeholder="Your Email" onChange={handleEmailValueChange} />
         <ButtonStyled onClick={handleButtonSignUpClick}>Continue</ButtonStyled>
         <StyledP margin="60px auto 0 auto">by sign up, you agree to get study</StyledP>
         <StyledP>
